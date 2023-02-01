@@ -1,14 +1,39 @@
-import type { GatsbyConfig } from "gatsby";
-
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     title: `Peach Jam`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.julia98percent.github.io`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
+  plugins: [
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-yaml`,
+      options: {
+        typeName: ({ node }: any) => {
+          const name = node.sourceInstanceName;
+          if (name === `Writings`) {
+            return `writing`;
+          }
+          if (name === `parks`) {
+            return `park`;
+          }
+          return name;
+        },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/blog`,
+        name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/Writings`,
+        name: `writing`,
+      },
+    },
+  ],
   graphqlTypegen: true,
 };
-
-export default config;
