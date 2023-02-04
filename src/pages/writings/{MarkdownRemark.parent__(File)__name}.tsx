@@ -27,6 +27,7 @@ export const query = graphql`
         date(formatString: "MM-DD-YYYY")
         topic
         title
+        tags
       }
       html
     }

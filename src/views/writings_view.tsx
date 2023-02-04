@@ -13,7 +13,7 @@ function WritingView({ writing }: any) {
           {writing.description}. Appeared in {writing.appearance}.
         </p>
       </main>
-      <footer>writing provided by Incite.</footer>
+      <footer style={{ backgroundColor: "pink" }}>여기는 footer 영역</footer>
     </div>
   );
 }

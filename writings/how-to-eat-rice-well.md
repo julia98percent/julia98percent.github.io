@@ -1,7 +1,9 @@
 ---
-title: Chestnut
+title: 밥을 잘 먹는 방법
+slug: how-to-eat-rice-well
 date: 2020-10-02
-topic: Westworld
+topic: eat
+tags: ["rice", "냠냠", "dummy"]
 ---
 
 Logan brings his friend William to Westworld, and encourages him to take in the more carnal delights of the park. William remains reluctant given his recent engagement. The next morning, William helps return a dropped tin of food to Dolores and leaves with a tip of the hat. Dolores returns to her farm to dig up a hidden pistol.

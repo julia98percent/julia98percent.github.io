@@ -10,27 +10,16 @@ module.exports = {
       options: {
         typeName: ({ node }: any) => {
           const name = node.sourceInstanceName;
-          if (name === `Writings`) {
-            return `writing`;
-          }
-          if (name === `parks`) {
-            return `park`;
-          }
+
           return name;
         },
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/Writings`,
+        path: `${__dirname}/writings`,
         name: `writing`,
       },
     },
