@@ -1,9 +1,4 @@
-*.gem
-.bundle
-.sass-cache
-_site
-Gemfile.lock
-.DS_Store
-vendor
-.jekyll-cache
-tags
+node_modules/
+.cache/
+public
+src/gatsby-types.d.ts

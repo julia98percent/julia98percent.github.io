@@ -1,222 +1,54 @@
-# plainwhite
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby minimal TypeScript starter
+</h1>
 
-Simplistic jekyll portfolio-style theme for writers.
+## 🚀 Quick start
 
-**Demo**: [samarsault.com](https://samarsault.com)
+1.  **Create a Gatsby site.**
 
-![plainwhite theme preview](/screenshot.png)
+    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
 
-## Installation on Github Pages
+    ```shell
+    # create a new Gatsby site using the minimal TypeScript starter
+    npm init gatsby
+    ```
 
-Add this line to your site's `_config.yml`:
+2.  **Start developing.**
 
-```yaml
-remote_theme: samarsault/plainwhite-jekyll
-```
+    Navigate into your new site’s directory and start it up.
 
-## Installation
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
+    ```
 
-Add this line to your Jekyll site's `Gemfile`:
+3.  **Open the code and start customizing!**
 
-```ruby
-gem "plainwhite"
-```
+    Your site is now running at http://localhost:8000!
 
-And add this line to your Jekyll site's `_config.yml`:
+    Edit `src/pages/index.tsx` to see your site update in real-time!
 
-```yaml
-theme: plainwhite
-```
+4.  **Learn more**
 
-And then execute:
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-    $ bundle
+    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-Or install it yourself as:
+    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-    $ gem install plainwhite
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-## Usage
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-The "plainwhite" key in \_config.yml is used to customize the theme data.
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-```yaml
-plainwhite:
-  name: Adam Denisov
-  tagline: Developer. Designer
-  date_format: "%b %-d, %Y"
+## 🚀 Quick start (Gatsby Cloud)
 
-  social_links:
-    twitter: samarsault
-    github: samarsault
-    linkedIn: in/samarsault # format: locale/username
-```
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
-**Updating Placeholder Image**
-
-The placeholder portfolio image can be replaced by the desired image by placing it as `assets/portfolio.png` in your jekyll website, or by changing the following line in `_config.yaml`
-
-```yaml
-plainwhite:
-  portfolio_image:  "assets/portfolio.png" # the path from the base directory of the site to the image to display (no / at the start)
-```
-
-To use a different image for dark mode, e.g. with different colors that work better in dark mode, add a `portfolio_image_dark` entry in addition to the `portfolio_image`.
-
-```yaml
-plainwhite:
-  portfolio_image:      "assets/portfolio.png"
-  portfolio_image_dark: "assets/portfolio_dark.png"
-```
-
-**Comments (Disqus)**
-
-Comments on posts can be enabled by specifying your disqus_shortname under plainwhite in `_config.yml`. For example,
-
-```yaml
-plainwhite:
-  disqus_shortname: games
-```
-
-**Google Analytics**
-
-It can be enabled by specifying your analytics id under plainwhite in `_config.yml`
-
-```yaml
-plainwhite:
-  analytics_id: "< YOUR ID >"
-```
-
-**Sitemap**
-
-It can be toggled by the following line to under plainwhite in `_config.yml`
-
-```yaml
-plainwhite:
-  sitemap: true
-```
-
-**Excerpts**
-
-Excerpts can be enabled by adding the following line to your `_config.yml`
-
-```yaml
-show_excerpts: true
-```
-
-**Layouts**
-
-- Home
-- Page
-- Post
-
-**Navigation**
-
-Navigation can be enabled by adding the following line to your `_config.yml`
-
-```yaml
-plainwhite:
-  navigation:
-    - title: My Work
-      url: "/my-work"
-    - title: Resume
-      url: "/resume"
-```
-
-**Mobile**
-
-By default, Plainwhite places the sidebar (logo, name, tagline etc.) above the content on mobile (narrow screens).
-To condense it (moving some things to the bottom of the page and making the rest smaller) so it takes up less space, add the following to your `_config.yml`:
-
-```yaml
-plainwhite:
-  condensed_mobile:
-    - home
-    - post
-    - page
-```
-
-This chooses which layouts (types of page) should be condensed on mobile screens. E.g. if you want everything but the landing page to be condensed, remove `home` from the list. This option does not affect rendering on wider screens.
-
-**Dark mode**
-
-Dark mode can be enabled by setting the `dark_mode` flag in your `_config.yml`
-
-The website will check the OS preferred color scheme and set the theme accordingly, the preference will then be saved in a cookie
-
-```yaml
-plainwhite:
-  dark_mode: true
-```
-
-![plainwhite dark theme previe](/dark.png)
-
-**Multiline tagline**
-
-Tagline can be multiline in this way
-
-```yaml
-plainwhite:
-  tagline: |
-  First Line. 
-
-  Second Line. 
-
-  Third Line.
-```
-
-**Search-bar**
-
-Search-bar can be enabled by adding the following line to `config.yml`
-
-```yaml
-plainwhite:
-  search: true
-```
-
-Search is powered by [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search) Jekyll plugin. A `search.json` containing post meta and contents will be generated in site root folder. Plugin JavaScript will then match for posts based on user input. More info and `search.json` customization documentation can be found in plugin repository.
-
-**Base URL**
-
-You can specify a custom base URL (eg. example.com/blog/) by adding the following line to `_config.yaml`. Note that there is no trailing slash on the URL.
-
-```yaml
-baseurl: "/blog"
-```
-
-**Language**
-
-You can set the `lang` attribute of the `<html>` tag on your pages by changing the following line in `_config.yml`:
-
-```yaml
-plainwhite:
-  html_lang: "en"
-```
-
-[See here for a full list of available language codes](https://www.w3schools.com/tags/ref_country_codes.asp)
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/samarsault/plainwhite-jekyll. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `plainwhite.gemspec` accordingly.
-
-## Donation
-If this project help you reduce time to develop, you can give me a cup of coffee :) 
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/thelehhman)
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## More themes
-
-- [Texture](https://github.com/samarsault/texture)
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
