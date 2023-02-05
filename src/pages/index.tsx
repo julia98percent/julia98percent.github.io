@@ -1,28 +1,23 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
+import Thumbnail from "../templates/Thumbnail";
 
 const Index = ({ data }: any) => {
   const allWritings = data.writings.nodes;
 
   return (
-    <main style={pageStyles}>
+    <main>
       <title>Home Page</title>
-      <h1 style={headingStyles}>Peach Jam</h1>
+      <h1>Peach Jam</h1>
       <Link to="/about">About</Link>
-      {allWritings.map((item: any, index: string) => (
+      {allWritings.map((item: { frontmatter: any }, index: string) => (
         <Link to={`/writings/${item.frontmatter.slug}`} key={index}>
-          <div>{item.frontmatter.title}</div>
+          <Thumbnail
+            title={item.frontmatter.title}
+            entry={`${item.frontmatter.title}은 엄청나게 중요합니당`}
+            createdAt={item.frontmatter.createdAt}
+            tags={item.frontmatter.tags}
+          />
         </Link>
       ))}
       {/* TODO 다크 모드 토글 버튼*/}
