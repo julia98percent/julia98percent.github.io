@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "gatsby": "^5.4.0",
+    "gatsby-plugin-sass": "^6.6.0",
     "gatsby-source-filesystem": "^5.5.0",
     "gatsby-transformer-remark": "^6.5.0",
     "gatsby-transformer-yaml": "^5.5.0",

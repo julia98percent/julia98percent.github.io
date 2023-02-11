@@ -23,6 +23,7 @@ module.exports = {
         name: `writing`,
       },
     },
+    `gatsby-plugin-sass`,
   ],
   graphqlTypegen: true,
 };
