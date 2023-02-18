@@ -17,6 +17,9 @@ const Index = ({ data }: any) => {
             entry={`${item.frontmatter.title}은 엄청나게 중요합니당`}
             createdAt={item.frontmatter.createdAt}
             tags={item.frontmatter.tags}
+            avatar={
+              item.frontmatter?.featuredImage?.childImageSharp?.gatsbyImageData
+            }
           />
         </Link>
       ))}
@@ -37,6 +40,11 @@ export const query = graphql`
           date
           tags
           slug
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
         }
         parent {
           ... on File {

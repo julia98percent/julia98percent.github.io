@@ -15,7 +15,11 @@ module.exports = {
         },
       },
     },
-
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,7 +27,12 @@ module.exports = {
         name: `writing`,
       },
     },
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/writing-thumbnail-image`,
+      },
+    },
   ],
   graphqlTypegen: true,
 };
