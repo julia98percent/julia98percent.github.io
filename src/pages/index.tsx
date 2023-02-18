@@ -1,12 +1,14 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Thumbnail from "../templates/Thumbnail";
+import Header from "../components/Header";
 
 const Index = ({ data }: any) => {
   const allWritings = data.writings.nodes;
 
   return (
     <main>
+      <Header />
       <title>Home Page</title>
       <h1>Peach Jam</h1>
       <Link to="/about">About</Link>

@@ -1,0 +1,27 @@
+.menuWrapper {
+  display: flex;
+  justify-content: space-between;
+  .left {
+    border: 1px solid black;
+    max-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-size: 50px;
+      font-weight: 700;
+    }
+  }
+  .right {
+    max-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 20px;
+    width: 500px;
+    a {
+      font-size: 25px;
+    }
+  }
+}
