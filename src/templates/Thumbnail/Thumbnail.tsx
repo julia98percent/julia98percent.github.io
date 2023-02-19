@@ -34,7 +34,7 @@ const Thumbnail = ({
       {getThumbnailImage(avatar)}
       <div className={styles.right}>
         <h3>{title}</h3>
-        <p>{entry}</p>
+        <p className={styles.entry}>{entry}</p>
         <div className={styles.tags}>
           <span>{createdAt}</span>
           {tags?.length > 0 &&

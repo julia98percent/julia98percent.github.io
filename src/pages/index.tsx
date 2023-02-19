@@ -17,19 +17,21 @@ const Index = ({ data }: any) => {
           const { featuredImage } = item.frontmatter;
 
           return (
-            <Link to={`/writings/${item.frontmatter.slug}`} key={index}>
-              <Thumbnail
-                title={item.frontmatter.title}
-                entry={`${item.frontmatter.title}은 엄청나게 중요합니당`}
-                createdAt={item.frontmatter.date.slice(0, 10)}
-                tags={item.frontmatter.tags}
-                avatar={
-                  featuredImage
-                    ? featuredImage?.childImageSharp.gatsbyImageData
-                    : Peach
-                }
-              />
-            </Link>
+            <div className={styles.thumbnailWrapper}>
+              <Link to={`/writings/${item.frontmatter.slug}`} key={index}>
+                <Thumbnail
+                  title={item.frontmatter.title}
+                  entry={`${item.frontmatter.title}은 엄청나게 중요합니당`}
+                  createdAt={item.frontmatter.date.slice(0, 10)}
+                  tags={item.frontmatter.tags}
+                  avatar={
+                    featuredImage
+                      ? featuredImage?.childImageSharp.gatsbyImageData
+                      : Peach
+                  }
+                />
+              </Link>
+            </div>
           );
         })}
       </div>
