@@ -1,3 +1,23 @@
-.abc {
-  background-color: pink;
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  img {
+    max-width: 100px;
+    height: 100px;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .tags {
+      * {
+        margin-right: 10px;
+      }
+      .tag {
+        display: inline;
+      }
+    }
+  }
 }

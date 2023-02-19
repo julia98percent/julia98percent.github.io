@@ -1,6 +1,7 @@
 import React from "react";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import * as styles from "./Thumbnail.module.scss";
+
 export interface ThumbnailProps {
   title: string;
   avatar?: ImageDataLike;
@@ -16,16 +17,33 @@ const Thumbnail = ({
   createdAt,
   tags,
 }: ThumbnailProps) => {
-  const image = getImage(avatar ?? null);
+  const getThumbnailImage = (avatar: any) => {
+    if (typeof avatar === null || typeof avatar === undefined) {
+      return null;
+    }
+    if (typeof avatar === "object") {
+      return <GatsbyImage image={getImage(avatar)} alt={title} />;
+    }
+    if (typeof avatar === "string") {
+      return <img src={avatar} />;
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
-      {image && <GatsbyImage image={image} alt={title} />}
+      {getThumbnailImage(avatar)}
       <div className={styles.right}>
         <h3>{title}</h3>
         <p>{entry}</p>
-        <span>{createdAt}</span>
-        {tags?.length > 0 &&
-          tags.map((tag, index) => <h6 key={tag + index}>{tag}</h6>)}
+        <div className={styles.tags}>
+          <span>{createdAt}</span>
+          {tags?.length > 0 &&
+            tags.map((tag, index) => (
+              <h6 className={styles.tag} key={tag + index}>
+                #{tag}
+              </h6>
+            ))}
+        </div>
       </div>
     </div>
   );
