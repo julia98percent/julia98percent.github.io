@@ -1,31 +1,40 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
+import Thumbnail from "../templates/Thumbnail";
+import Header from "../components/Header";
+import * as styles from "./index.module.scss";
+import Peach from "../../writing-thumbnail-image/peach.png";
 
 const Index = ({ data }: any) => {
   const allWritings = data.writings.nodes;
-
   return (
-    <main style={pageStyles}>
+    <main className={styles.wrapper}>
+      <Header />
       <title>Home Page</title>
-      <h1 style={headingStyles}>Peach Jam</h1>
-      <Link to="/about">About</Link>
-      {allWritings.map((item: any, index: string) => (
-        <Link to={`/writings/${item.frontmatter.slug}`} key={index}>
-          <div>{item.frontmatter.title}</div>
-        </Link>
-      ))}
-      {/* TODO 다크 모드 토글 버튼*/}
+      <div>
+        <p className={styles.recentText}>최근 글</p>
+        {allWritings.map((item: { frontmatter: any }, index: string) => {
+          const { featuredImage } = item.frontmatter;
+
+          return (
+            <div className={styles.thumbnailWrapper}>
+              <Link to={`/writings/${item.frontmatter.slug}`} key={index}>
+                <Thumbnail
+                  title={item.frontmatter.title}
+                  entry={`${item.frontmatter.title}은 엄청나게 중요합니당`}
+                  createdAt={item.frontmatter.date.slice(0, 10)}
+                  tags={item.frontmatter.tags}
+                  avatar={
+                    featuredImage
+                      ? featuredImage?.childImageSharp.gatsbyImageData
+                      : Peach
+                  }
+                />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
       {/* TODO 검색 버튼 */}
     </main>
   );
@@ -42,6 +51,11 @@ export const query = graphql`
           date
           tags
           slug
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
         }
         parent {
           ... on File {

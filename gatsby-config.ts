@@ -15,12 +15,22 @@ module.exports = {
         },
       },
     },
-
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/writings`,
         name: `writing`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/writing-thumbnail-image`,
       },
     },
   ],
