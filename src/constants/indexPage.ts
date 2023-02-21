@@ -4,6 +4,6 @@ export const menuList = [
     uri: "/about",
   },
   { name: "🐰", uri: "https://bsscl.tistory.com/" },
-  { name: "Writings", uri: "allWritings" },
+  { name: "Writings", uri: "/allWritings" },
   { name: "🐱", uri: "https://github.com/julia98percent" },
 ];
