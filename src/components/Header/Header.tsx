@@ -9,7 +9,9 @@ const Header = () => {
   return (
     <div className={styles.menuWrapper}>
       <div className={styles.left}>
-        <h1>{BLOG_NAME}</h1>
+        <Link to="/">
+          <h1>{BLOG_NAME}</h1>
+        </Link>
       </div>
       <div className={styles.right}>
         {menuList.map(({ name, uri }) => (
