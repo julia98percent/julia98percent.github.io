@@ -5,15 +5,14 @@ import Header from "../components/Header";
 import * as styles from "./index.module.scss";
 import Peach from "../../writing-thumbnail-image/peach.png";
 
-const Index = ({ data }: any) => {
-  const recentWritings = data.recentWritings.nodes;
-
+const allWritings = ({ data }: any) => {
+  const recentWritings = data.allWritings.nodes;
   return (
     <main className={styles.wrapper}>
       <Header />
       <title>Home Page</title>
       <div>
-        <p className={styles.recentText}>최근 글</p>
+        <p className={styles.recentText}>모든 글</p>
         {recentWritings.map((item: { frontmatter: any }, index: string) => {
           const { featuredImage } = item.frontmatter;
 
@@ -36,21 +35,15 @@ const Index = ({ data }: any) => {
           );
         })}
       </div>
-      {/* TODO 검색 버튼 */}
     </main>
   );
 };
 
-export default Index;
+export default allWritings;
 
-// 비교를 위해 임시로 limit 1 적용
-// TODO 추후 포스팅 5개 넘으면 5로 수정하기
 export const query = graphql`
   {
-    recentWritings: allMarkdownRemark(
-      sort: { frontmatter: { date: DESC } }
-      limit: 1
-    ) {
+    allWritings: allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           title
