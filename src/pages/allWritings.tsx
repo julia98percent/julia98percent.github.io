@@ -19,7 +19,7 @@ const allWritings = ({ data }: any) => {
 
             return (
               <div className={styles.thumbnailWrapper}>
-                <Link to={`/writings/${item.frontmatter.slug}`} key={index}>
+                <Link to={`/writing/${item.frontmatter.slug}`} key={index}>
                   <Thumbnail
                     title={item.frontmatter.title}
                     entry={`${item.frontmatter.title}은 엄청나게 중요합니당`}
